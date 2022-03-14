@@ -32,6 +32,9 @@ endif
 
 ############################ 
 
+slibrary: $(OBJECTS)
+	ar rc lsimple-engine.a Application.o
+
 output: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $(LIBRARY) -o simple-engine.out $(OBJECTS) 
 
@@ -69,5 +72,5 @@ State.o: Source/State.cpp Include/Game/State.hpp
 # .hppe "-" in -rm causes make to continue in spite of errors from rm
 .PHONY: clean
 clean:
-	-rm $(OBJECTS) simple-engine.out
+	-rm $(OBJECTS) simple-engine.out lsimple-engine.a
 
