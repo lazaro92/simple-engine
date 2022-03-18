@@ -6,7 +6,7 @@
 ### variables ##############
 
 CXX      := g++
-OBJECTS  := main.o Application.o CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o State.o
+OBJECTS  := Application.o CommandQueue.o Player.o SoundPlayer.o StateStack.o Command.o MusicPlayer.o State.o
 LIBRARY  := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 CXXFLAGS := -I Include/
 
@@ -34,9 +34,6 @@ endif
 
 output: $(OBJECTS)
 	ar rc lsimple-engine.a Application.o
-
-main.o: Source/main.cpp
-	$(CXX) $(CXXFLAGS) -c Source/main.cpp
 
 Application.o: Source/Application.cpp Include/Game/Application.hpp
 	$(CXX) $(CXXFLAGS) -c Source/Application.cpp

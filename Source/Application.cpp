@@ -67,13 +67,16 @@ void Application::run()
 
 			// Check inside this loop, because stack might be empty before update() call
 			if (mStateStack.isEmpty())
+            {
                 #if _DEBUG
                 std::cout << "INFO: State Stack is empty" << std::endl;
                 #endif
 				mWindow.close();
+            }
 		}
-
+        #if _DEBUG
 		updateStatistics(dt);
+        #endif
 		render();
 	}
 }
